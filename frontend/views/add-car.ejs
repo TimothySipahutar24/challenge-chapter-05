@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CMS Car Rental</title>
-    <link rel="stylesheet" href="/static/assets/style.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -411,50 +411,71 @@
                 <!-- Form -->
                 <div class="bg-white p-8">
                   <form
-                    action="/create-car"
+                    action="/add-car"
                     method="POST"
                     enctype="multipart/form-data"
                   >
                     <div class="flex flex-row place-items-center mb-4">
-                      <label for="name" class="w-36">Nama</label>
+                      <label for="carName" class="w-36">Nama</label>
                       <input
                         type="text"
-                        name="name"
+                        name="carName"
                         id="car-name"
                         class="border-solid border-2 border-gray-400"
                       />
                     </div>
                     <div class="flex flex-row place-items-center mb-4">
-                      <label for="price" class="w-36">Harga</label>
-                      <input type="text" name="price" id="car-price" />
+                      <label for="rent" class="w-36">Harga</label>
+                      <input
+                        type="text"
+                        name="rent"
+                        id="car-price"
+                        class="border-solid border-2 border-gray-400"
+                      />
                     </div>
                     <div class="flex flex-row place-items-center mb-4">
                       <label for="image" class="w-36">Foto</label>
                       <input
                         type="file"
                         id="car-image"
-                        name="image"
+                        name="car-image"
                         accept="image/*"
                       />
                     </div>
                     <div class="flex flex-row place-items-center mb-4">
                       <label for="start-date" class="w-36">Start Rent</label>
                       <input
-                        type="date"
+                        type="texr"
                         name="start-date"
+                        class="border-solid border-2 border-gray-400 bg-gray-300"
                         id="car-start-rent"
+                        disabled
+                        placeholder="-"
                       />
                     </div>
                     <div class="flex flex-row place-items-center mb-4">
                       <label for="start-date" class="w-36">Finish Rent</label>
-                      <input type="date" name="end-date" id="car-end-rent" />
+                      <input
+                        type="text"
+                        name="end-date"
+                        class="border-solid border-2 border-gray-400 bg-gray-300"
+                        id="car-end-rent"
+                        disabled
+                        placeholder="-"
+                      />
                     </div>
                     <div>
                       <a
                         href="/"
-                        class="py-2 px-3 bg-white border-solid border-x-indigo-600"
+                        class="py-2 px-3 bg-white border-solid border-2 text-indigo-600 border-indigo-600"
                         >Cancel</a
                       >
+                      <button
+                        type="submit"
+                        class="py-2 px-3 bg-indigo-600 text-white"
+                      >
+                        Save
+                      </button>
                     </div>
                   </form>
                 </div>

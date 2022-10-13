@@ -392,7 +392,7 @@
                 </ol>
               </nav>
               <div class="">
-                <div class="flex justify-between place-items-center">
+                <div class="flex justify-between place-items-center mb-9">
                   <h1 class="text-xl font-bold">List Car</h1>
                   <a
                     href="/add-car"
@@ -408,17 +408,18 @@
                 <!-- Cars -->
                 <div class="grid lg:grid-cols-3 grid-flow-row lg:gap-4">
                   <!-- Card -->
+                  <% data.forEach(element => { %>
                   <div class="bg-white max-w-[22rem] p-6 rounded-lg">
                     <div class="flex justify-center">
                       <div class="max-w-[17rem]">
-                        <img src="../assets/image 1.png" alt="car-image" />
+                        <img src="<%= element.carImage %> " alt="car-image" />
                       </div>
                     </div>
                     <div class="mt-4">
                       <div>
-                        <p class="text-sm">Nama/Tipe Mobil</p>
+                        <p class="text-sm"><%= element.carName %></p>
                         <p class="mt-2 text-base font-bold">
-                          Rp 430.000 / hari
+                          Rp <%= element.rent %> / hari
                         </p>
                       </div>
                       <div class="flex flex-row mt-4">
@@ -429,10 +430,13 @@
                         <span class="material-symbols-outlined">
                           schedule
                         </span>
-                        <p class="ml-2">Updated at 4 Apr 2022, 09.00</p>
+                        <p class="ml-2"><%= element.updatedAt %></p>
                       </div>
                       <div class="flex flex-row justify-between mt-6">
-                        <a href="#" class="bg-red-600 py-4 px-9 rounded-md">
+                        <a
+                          href="/delete-cars/<%= element.id %> "
+                          class="bg-red-600 py-4 px-9 rounded-md"
+                        >
                           <div class="flex flex-row text-white">
                             <span class="material-symbols-outlined">
                               delete
@@ -441,7 +445,7 @@
                           </div>
                         </a>
                         <a
-                          href="edit-car.html"
+                          href="/edit-car/<%= element.id %> "
                           class="bg-green-500 py-4 px-9 rounded-md"
                         >
                           <div class="flex flex-row text-white">
@@ -454,147 +458,7 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="bg-white max-w-[22rem] p-6 rounded-lg">
-                    <div class="flex justify-center">
-                      <div class="max-w-[17rem]">
-                        <img src="../assets/image 1.png" alt="car-image" />
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <div>
-                        <p class="text-sm">Nama/Tipe Mobil</p>
-                        <p class="mt-2 text-base font-bold">
-                          Rp 430.000 / hari
-                        </p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined"> flag </span>
-                        <p class="ml-2">Start rent - Finish rent</p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined">
-                          schedule
-                        </span>
-                        <p class="ml-2">Updated at 4 Apr 2022, 09.00</p>
-                      </div>
-                      <div class="flex flex-row justify-between mt-6">
-                        <a href="#" class="bg-red-600 py-4 px-9 rounded-md">
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              delete
-                            </span>
-                            <p class="ml-3">Delete</p>
-                          </div>
-                        </a>
-                        <a
-                          href="edit-car.html"
-                          class="bg-green-500 py-4 px-9 rounded-md"
-                        >
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              edit
-                            </span>
-                            <p class="ml-3">Edit</p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bg-white max-w-[22rem] p-6 rounded-lg">
-                    <div class="flex justify-center">
-                      <div class="max-w-[17rem]">
-                        <img src="../assets/image 1.png" alt="car-image" />
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <div>
-                        <p class="text-sm">Nama/Tipe Mobil</p>
-                        <p class="mt-2 text-base font-bold">
-                          Rp 430.000 / hari
-                        </p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined"> flag </span>
-                        <p class="ml-2">Start rent - Finish rent</p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined">
-                          schedule
-                        </span>
-                        <p class="ml-2">Updated at 4 Apr 2022, 09.00</p>
-                      </div>
-                      <div class="flex flex-row justify-between mt-6">
-                        <a href="#" class="bg-red-600 py-4 px-9 rounded-md">
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              delete
-                            </span>
-                            <p class="ml-3">Delete</p>
-                          </div>
-                        </a>
-                        <a
-                          href="edit-car.html"
-                          class="bg-green-500 py-4 px-9 rounded-md"
-                        >
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              edit
-                            </span>
-                            <p class="ml-3">Edit</p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bg-white max-w-[22rem] p-6 rounded-lg">
-                    <div class="flex justify-center">
-                      <div class="max-w-[17rem]">
-                        <img src="../assets/image 1.png" alt="car-image" />
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <div>
-                        <p class="text-sm">Nama/Tipe Mobil</p>
-                        <p class="mt-2 text-base font-bold">
-                          Rp 430.000 / hari
-                        </p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined"> flag </span>
-                        <p class="ml-2">Start rent - Finish rent</p>
-                      </div>
-                      <div class="flex flex-row mt-4">
-                        <span class="material-symbols-outlined">
-                          schedule
-                        </span>
-                        <p class="ml-2">Updated at 4 Apr 2022, 09.00</p>
-                      </div>
-                      <div class="flex flex-row justify-between mt-6">
-                        <a href="#" class="bg-red-600 py-4 px-9 rounded-md">
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              delete
-                            </span>
-                            <p class="ml-3">Delete</p>
-                          </div>
-                        </a>
-                        <a
-                          href="edit-car.html"
-                          class="bg-green-500 py-4 px-9 rounded-md"
-                        >
-                          <div class="flex flex-row text-white">
-                            <span class="material-symbols-outlined">
-                              edit
-                            </span>
-                            <p class="ml-3">Edit</p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  <% }) %>
                 </div>
               </div>
             </main>
